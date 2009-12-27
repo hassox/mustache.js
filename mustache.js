@@ -4,7 +4,7 @@
      Sebastian Cohnen <sebastian.cohnen@googlemail.com>
 
   Thanks @defunkt for the awesome code.
-  
+
   See http://github.com/defunkt/mustache for more info.
 */
 
@@ -45,7 +45,7 @@ var Mustache = function() {
       });
     },
 
-    /* 
+    /*
       Tries to find a partial in the global scope and render it
     */
     render_partial: function(name, context, partials) {
@@ -109,7 +109,7 @@ var Mustache = function() {
             case "=": // set new delimiters, rebuild the replace regexp
               that.set_delimiters(name);
               regex = new_regex();
-              // redo the line in order to get tags with the new delimiters 
+              // redo the line in order to get tags with the new delimiters
               // on the same line
               i--;
               return "";
@@ -147,7 +147,7 @@ var Mustache = function() {
     },
 
     /*
-      find `name` in current `context`. That is find me a value 
+      find `name` in current `context`. That is find me a value
       from the view object
     */
     find: function(name, context) {
@@ -232,7 +232,7 @@ var Mustache = function() {
 
     /*
       Why, why, why? Because IE. Cry, cry cry.
-    */  
+    */
     map: function(array, fn) {
       if (typeof array.map == "function") {
         return array.map(fn)
@@ -259,3 +259,6 @@ var Mustache = function() {
     }
   });
 }();
+
+if(exports)
+  exports.Mustache = Mustache;
